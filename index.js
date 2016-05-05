@@ -1,15 +1,17 @@
+
 var express = require('express');
-var app = express();
+var serveStatic = require("serve-static");
 
-app.get('/', function (req, res) {
-    res.send('Hello from Cisco Shipped!');
+var app = express(); 
+app.use(serveStatic(__dirname + "/.")); 
+
+
+app.get('/endpoints', function (req, res) {
+	var eps={}
+	//eps.test		= process.env.ENV_VARIABLE 
+	res.json(eps);
 });
 
-var server = app.listen(3000, function () {
-
-    var host = server.address().address;
-    var port = server.address().port;
-
-    console.log('Example app listening at http://%s:%s', host, port);
-
-});
+//Server listening port.
+app.listen(3000);
+console.log('Server running on http://localhost:3000/');
