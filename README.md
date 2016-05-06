@@ -10,10 +10,12 @@ Basic utility rest api in Go using marathon endpoints.
 ## Endpoints
 - Default API - GET /
 ```
-### Request
+Request
+ 
     No Request
     
-### Response
+Response
+
 {
     "Status": "OK"
 }
@@ -22,13 +24,16 @@ Basic utility rest api in Go using marathon endpoints.
 
 - Login API - POST /login
 ```
-### Request
+Request
+ 
 {
 	"id": {marathon username},
 	"pass": {marathon password},
 	"api": {marathon endpoint}
 }
-### Response
+
+Response
+ 
 {
 	"StatusCode": 200,
 	"Status": "OK",
@@ -43,12 +48,12 @@ Basic utility rest api in Go using marathon endpoints.
 }
 ```
 
-- List Of Apps API - GET /apps
+- List Of Apps - GET /apps
 ```
-### Request Header
+ Request Header
 X-Token : {token generated at the time of login}
 
-### Response
+ Response
 [{
 	"id": "/mantl-api",
 	"text": "/mantl-api"
@@ -59,13 +64,16 @@ X-Token : {token generated at the time of login}
 
 ```
 
-- Get App By Id API - GET /apps/{id}
+- Get App By Id - GET /apps/{id}
 ```
-### Request Header
+Request Header
+ 
 X-Token : {token generated at the time of login}
-### Response
+
+Response
+ 
 {
-	"id": "/david-staging--traefik-kafka-3--traefik-kafka-cmx-3--807e8c",
+	"id": "/david-staging--cmx-3--807e8c",
 	"projectname": "traefik-kafka-3",
 	"projectid": "19c60964-0621-11e6-bd9b-0242ac110003",
 	"envname": "david-staging",
@@ -75,19 +83,22 @@ X-Token : {token generated at the time of login}
 	"tasks": [{
 		"host": "shipped-tx3-infra-204.node.consul",
 		"ports": [31040],
-		"id": "david-staging--traefik-kafka-3--traefik-kafka-cmx-3--807e8c.80b63a12-1356-11e6-a6d7-6296a94e7041",
-		"appid": "/david-staging--traefik-kafka-3--traefik-kafka-cmx-3--807e8c"
+		"id": "david-staging---11e6-a6d7-6296a94e7041",
+		"appid": "/david-staging3--807e8c"
 	}]
 }
 ```
 
-- Get App By Hostname and Port No API - GET /hostport/{hostname}/{portno}
+- Get App By Hostname and Port Number - GET /hostport/{hostname}/{portno}
 ```
-### Request Header
+Request Header
+ 
 X-Token : {token generated at the time of login}
-### Response
+
+Response
+ 
 {
-	"id": "/david-staging--traefik-kafka-3--traefik-kafka-cmx-3--807e8c",
+	"id": "/david-staging3--807e8c",
 	"projectname": "traefik-kafka-3",
 	"projectid": "19c60964-0621-11e6-bd9b-0242ac110003",
 	"envname": "david-staging",
@@ -97,17 +108,20 @@ X-Token : {token generated at the time of login}
 	"tasks": [{
 		"host": "shipped-tx3-infra-204.node.consul",
 		"ports": [31040],
-		"id": "david-staging--traefik-kafka-3--traefik-kafka-cmx-3--807e8c.80b63a12-1356-11e6-a6d7-6296a94e7041",
-		"appid": "/david-staging--traefik-kafka-3--traefik-kafka-cmx-3--807e8c"
+		"id": "david-staging--6296a94e7041",
+		"appid": "/david-staging--3--807e8c"
 	}]
 }
 ```
 
 - Logout Application API - GET /logout
 ```
-### Request Header
+Request Header
+
 X-Token : {token generated at the time of login}
-### Response
+
+Response
+
 {
 	"StatusCode": 200,
 	"Status": "Successfully Logged Out",
