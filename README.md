@@ -8,7 +8,7 @@ Basic utility rest api in Go using marathon endpoints.
 
 
 ## Endpoints
-- **Default API - GET /
+- Default API - GET /
 ```
 ### Request
     No Request
@@ -20,7 +20,7 @@ Basic utility rest api in Go using marathon endpoints.
 
 ```
 
-- **Login API - POST /login
+- Login API - POST /login
 ```
 ### Request
 {
@@ -43,7 +43,7 @@ Basic utility rest api in Go using marathon endpoints.
 }
 ```
 
-- **List Of Apps API - GET /apps
+- List Of Apps API - GET /apps
 ```
 ### Request Header
 X-Token : {token generated at the time of login}
@@ -59,7 +59,7 @@ X-Token : {token generated at the time of login}
 
 ```
 
-- **Get App By Id API - GET /apps/{id}
+- Get App By Id API - GET /apps/{id}
 ```
 ### Request Header
 X-Token : {token generated at the time of login}
@@ -81,7 +81,7 @@ X-Token : {token generated at the time of login}
 }
 ```
 
-- **Get App By Hostname and Port No API - GET /hostport/{hostname}/{portno}
+- Get App By Hostname and Port No API - GET /hostport/{hostname}/{portno}
 ```
 ### Request Header
 X-Token : {token generated at the time of login}
@@ -103,7 +103,7 @@ X-Token : {token generated at the time of login}
 }
 ```
 
-- **Logout Application API - GET /logout
+- Logout Application API - GET /logout
 ```
 ### Request Header
 X-Token : {token generated at the time of login}
